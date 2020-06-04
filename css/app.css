@@ -1,0 +1,20 @@
+body{
+    background-image: url("../imgs/Modern-Vintage-3D-Stereo-Effect-White-Brick-Wallpaper-Roll-Vinyl-PVC-Rustic-Realistic-Faux-Brick-Wall.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+h1{
+    font-size: 100px;
+    font-family: 'Be Vietnam';
+    font-weight: 400;/* 100 200 300 400(normal) 500 600 700(bold) 800 900 */
+    line-height: 1.5;
+    text-decoration: none;
+    /* underline line-through overline none*/
+    text-align: center;
+    /* left right justify center */
+    color: #ff112290;/* rgba(255,17,34,0.5) */
+    background-color: #F5F5DC;
+    border-top:1px solid #ff112290;
+    border-bottom:1px solid #ff112290;
+}
