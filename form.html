@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Data</title>
+</head>
+<body>
+    <form method="post" action="#">
+        <input type="text" name="username" placeholder="Username.." required/><br/><br/>
+        <input type="email" name="email" placeholder="Email.."  required/><br/><br/>
+        <input type="password" name="user_password" placeholder="Password" required/><br/><br/>
+        <label><input type="checkbox" name="ready"/>I'm ready</label><br/><br/>
+        <label><input type="radio" name="sex" value="male"/>Male</label><br/>
+        <label><input type="radio" name="sex" value="female"/>Female</label><br/>
+        <label><input type="radio" name="sex" value="other"/>Other</label><br/>
+        <br/>
+        <input type="date" name="birthday" placeholder="Ngày sinh"/><br/><br/>
+        <input type="time" name="time" placeholder="Giờ sinh"/><br/><br/>
+        <input type="month" name="month" placeholder="tháng sinh"/><br/><br/>
+
+        <input type="color" name="my_color" placeholder="Color.."/><br/><br/>
+        <input type="number" name="money" placeholder="Money.."/><br/><br/>
+        <input type="range" name="volumes" min="0" max="100" placeholder="Volumes.."/><br/><br/>
+        <input type="file" name="avatar" placeholder="Avatar"/><br/><br/>
+        <input type="hidden" name="_token" value="server_token"/>
+
+        <select name="faculty">
+            <option value="toan">Toán</option>
+            <option value="dientu">Điện tử</option>
+            <option value="cntt">Công nghệ thông tin</option>
+            <option value="hatnhan">Khoa học hạt nhân</option>
+            <option value="kthangkhong">Kỹ thuật hàng không</option>
+        </select><br/><br/>
+
+        <textarea name="tieusubanthan" rows="5" cols="100" placeholder="Tiểu sử bản thân...">
+        </textarea><br/><br/>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button">Button</button>
+    </form>
+</body>
+</html>
