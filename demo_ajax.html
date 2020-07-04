@@ -18,6 +18,7 @@
     <h3 id="temp_min"></h3>
     <h3 id="temp_max"></h3>
     <h3 id="sea-lv"></h3>
+    <ul></ul>
     <script src="js/jquery.js"></script>
     <script type="text/javascript">
        let api_url = "http://api.openweathermap.org/data/2.5/weather";
@@ -60,6 +61,16 @@
                 }
             });
         })
+       // gợi ý
+       /*
+        success: function(rs) {
+            let ls = rs.list;
+            for(let i=0;i<ls.length;i++){
+                let li_html = "<li>"+ls[i].main.temp+ ls[i].dt_txt+"</li>";
+                ul.innerHTML += li_html;
+            }
+        }
+        */
     </script>
 </body>
 </html>
