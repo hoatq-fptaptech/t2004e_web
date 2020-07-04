@@ -14,16 +14,19 @@
     <h3 id="sea-lv"></h3>
     <script src="js/jquery.js"></script>
     <script type="text/javascript">
-        let api_url = "http://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02";
+       // let api_url = "https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02";
         $.ajax({
-            url: api_url,
+            url: "data.json",
             method: "GET",
-            crossDomain: true,
-            headers: {
-                'Access-Control-Allow-Origin': '*'
-            },
+            type: "application/json",
             success: function (rs) {
-                console.log(rs);
+                $("#city").text(rs.name+" - "+rs.sys.country)
+                $("#temp").text(rs.main.temp);
+                $("#press").text(rs.main.pressure);
+                $("#hum").text(rs.main.humidity);
+                $("#temp_min").text(rs.main.temp_min);
+                $("#temp_max").text(rs.main.temp_max);
+                $("#sea-lv").text(rs.main.sea_level);
             }
         });
     </script>
