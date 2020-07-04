@@ -5,6 +5,12 @@
         <title>Title</title>
     </head>
 <body>
+    <select id="select">
+        <option value="Hanoi,vietnam">Hanoi</option>
+        <option value="Saigon,vietnam">Saigon</option>
+        <option value="haiphong,vietnam">haiphong</option>
+        <option value="London,uk">London</option>
+    </select>
     <h1 id="city"></h1>
     <h3 id="temp"></h3>
     <h3 id="press"></h3>
@@ -12,26 +18,48 @@
     <h3 id="temp_min"></h3>
     <h3 id="temp_max"></h3>
     <h3 id="sea-lv"></h3>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/jquery.js"></script>
     <script type="text/javascript">
-       let api_url = "https://samples.openweathermap.org/data/2.5/forecast/hourly?zip=94040&appid=439d4b804bc8187953eb36d2a8c26a02";
-       axios.get(api_url).then(function (rs) {
-            console.log(rs);
-       })
-        // $.ajax({
-        //     url: api_url,
-        //     method: "GET",
-        //     type: "application/json",
-        //     success: function (rs) {
-        //         $("#city").text(rs.name+" - "+rs.sys.country)
-        //         $("#temp").text(rs.main.temp);
-        //         $("#press").text(rs.main.pressure);
-        //         $("#hum").text(rs.main.humidity);
-        //         $("#temp_min").text(rs.main.temp_min);
-        //         $("#temp_max").text(rs.main.temp_max);
-        //         $("#sea-lv").text(rs.main.sea_level);
-        //     }
-        // });
+       let api_url = "http://api.openweathermap.org/data/2.5/weather";
+        $.ajax({
+            url: api_url,
+            method: "GET",
+            data:{
+                q:"Hanoi,vietnam",
+                appid:"09a71427c59d38d6a34f89b47d75975c",
+                units:"metric"
+            },
+            success: function (rs) {
+                $("#city").text(rs.name+" - "+rs.sys.country)
+                $("#temp").text(rs.main.temp);
+                $("#press").text(rs.main.pressure);
+                $("#hum").text(rs.main.humidity);
+                $("#temp_min").text(rs.main.temp_min);
+                $("#temp_max").text(rs.main.temp_max);
+                $("#sea-lv").text(rs.main.sea_level);
+            }
+        });
+        $("#select").bind("change",function () {
+            let value = $(this).val();
+            $.ajax({
+                url: api_url,
+                method: "GET",
+                data:{
+                    q: value,
+                    appid:"09a71427c59d38d6a34f89b47d75975c",
+                    units:"metric"
+                },
+                success: function (rs) {
+                    $("#city").text(rs.name+" - "+rs.sys.country);
+                    $("#temp").text(rs.main.temp);
+                    $("#press").text(rs.main.pressure);
+                    $("#hum").text(rs.main.humidity);
+                    $("#temp_min").text(rs.main.temp_min);
+                    $("#temp_max").text(rs.main.temp_max);
+                    $("#sea-lv").text(rs.main.sea_level);
+                }
+            });
+        })
     </script>
 </body>
 </html>
