@@ -18,6 +18,10 @@
         $.ajax({
             url: api_url,
             method: "GET",
+            crossDomain: true,
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            },
             success: function (rs) {
                 console.log(rs);
             }
